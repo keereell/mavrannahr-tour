@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mavrannahr Tour — Вариант 1: Royal Dark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D1B2A;
+      --navy-mid:   #122030;
+      --navy-light: #1A2E42;
+      --gold:       #C9A84C;
+      --gold-light: #DFC070;
+      --gold-dim:   rgba(201,168,76,0.18);
+      --white:      #FAFAFA;
+      --gray:       #8A9BAA;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 76px;
+      padding: 0 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .35s, border-color .35s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(13,27,42,.96);
+      backdrop-filter: blur(14px);
+      border-color: var(--gold-dim);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--white); font-weight: 300; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(250,250,250,.75);
+      text-decoration: none;
+      font-size: .73rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-lang {
+      display: flex;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .nav-lang button {
+      background: none;
+      border: none;
+      color: rgba(250,250,250,.55);
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      padding: 5px 13px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .nav-lang button.active { background: var(--gold); color: var(--navy); font-weight: 500; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 660px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13,27,42,.25) 0%, rgba(13,27,42,.55) 55%, rgba(13,27,42,.97) 100%),
+        url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 840px;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      font-size: .67rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 44px;
+      background: var(--gold);
+      opacity: .55;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 7vw, 6.2rem);
+      font-weight: 300;
+      line-height: 1.07;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(250,250,250,.6);
+      margin-bottom: 54px;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      padding: 15px 40px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .3s;
+      cursor: pointer;
+      background: none;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+    .btn-outline svg { width: 16px; height: 16px; transition: transform .3s; }
+    .btn-outline:hover svg { transform: translateX(5px); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(250,250,250,.35);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .hero-scroll-bar {
+      width: 1px;
+      height: 46px;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,.6));
+      animation: scrollPulse 2.2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: .4; }
+      50% { opacity: 1; }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 96px 64px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .label {
+      font-size: .64rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 300;
+      line-height: 1.18;
+      margin-bottom: 20px;
+    }
+    .gold-bar {
+      width: 52px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 22px;
+    }
+    .body-text {
+      font-size: .87rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--gray);
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--navy-mid); }
+    .services-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .services-head .gold-bar { margin: 20px auto 22px; }
+    .services-head .body-text { max-width: 540px; margin: 0 auto; text-align: center; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--gold-dim);
+    }
+    .svc-card {
+      padding: 44px 34px;
+      border-right: 1px solid var(--gold-dim);
+      transition: background .25s;
+    }
+    .svc-card:last-child { border-right: none; }
+    .svc-card:hover { background: var(--navy-light); }
+    .svc-icon {
+      width: 44px;
+      height: 44px;
+      color: var(--gold);
+      margin-bottom: 26px;
+      stroke-width: 1.1;
+    }
+    .svc-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .svc-card p { font-size: .8rem; font-weight: 300; line-height: 1.8; color: var(--gray); }
+    .svc-more {
+      display: inline-block;
+      margin-top: 22px;
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--navy); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -18px; left: -18px; right: 18px; bottom: 18px;
+      border: 1px solid var(--gold-dim);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(.82) saturate(.9);
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 44px;
+    }
+    .stat {
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 18px;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: .74rem;
+      font-weight: 300;
+      color: var(--gray);
+      margin-top: 6px;
+      letter-spacing: .04em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080E17;
+      padding: 60px 64px 40px;
+      border-top: 1px solid var(--gold-dim);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 56px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.38rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .footer-brand span { color: var(--white); font-weight: 300; }
+    .footer-desc { font-size: .79rem; font-weight: 300; line-height: 1.8; color: var(--gray); max-width: 260px; }
+    footer h5 {
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 11px; }
+    footer ul a {
+      font-size: .8rem;
+      font-weight: 300;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    footer ul a:hover { color: var(--white); }
+    .footer-copy {
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 22px;
+      font-size: .7rem;
+      color: rgba(138,155,170,.45);
+    }
+
+    @media (max-width: 1024px) {
+      nav { padding: 0 28px; }
+      section { padding: 72px 28px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .svc-card:nth-child(2) { border-right: none; }
+      .svc-card:nth-child(3) { border-top: 1px solid var(--gold-dim); border-right: 1px solid var(--gold-dim); }
+      .svc-card:nth-child(4) { border-top: 1px solid var(--gold-dim); }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      footer { padding: 48px 28px 32px; }
+    }
+    /* ── INFO / REQUISITES ── */
+    .info { background: var(--navy-mid); }
+    .info-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .info-head .gold-bar { margin: 20px auto 22px; }
+    .info-head .body-text { max-width: 540px; margin: 0 auto; text-align: center; }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--gold-dim);
+    }
+    .info-card {
+      padding: 40px 30px;
+      border-right: 1px solid var(--gold-dim);
+    }
+    .info-card:last-child { border-right: none; }
+    .info-icon {
+      width: 34px;
+      height: 34px;
+      color: var(--gold);
+      margin-bottom: 22px;
+      stroke-width: 1.1;
+    }
+    .info-lbl {
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .info-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .info-card p {
+      font-size: .8rem;
+      font-weight: 300;
+      line-height: 1.78;
+      color: var(--gray);
+    }
+    @media (max-width: 1024px) {
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .info-card:nth-child(2) { border-right: none; }
+      .info-card:nth-child(3), .info-card:nth-child(4) { border-top: 1px solid var(--gold-dim); }
+      .info-card:nth-child(3) { border-right: 1px solid var(--gold-dim); }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .svc-card { border-right: none; border-bottom: 1px solid var(--gold-dim); }
+      .footer-top { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-card { border-right: none; border-bottom: 1px solid var(--gold-dim); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">MAVRANNAHR<span> TOUR</span></a>
+    <ul class="nav-links">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Услуги</a></li>
+      <li><a href="#">Туры</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+    <div class="nav-lang">
+      <button class="active">RU</button>
+      <button>UZ</button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Туристическая компания · Узбекистан</div>
+      <h1 class="hero-title">Откройте<br><em>Великий Шёлковый путь</em></h1>
+      <p class="hero-sub">Незабываемые путешествия по сердцу Центральной Азии</p>
+      <a href="#" class="btn-outline">
+        Связаться с нами
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-bar"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section class="services">
+    <div class="container">
+      <div class="services-head">
+        <p class="label">Направления деятельности</p>
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="gold-bar"></div>
+        <p class="body-text">Полный спектр туристических услуг для частных клиентов, деловых путешественников и корпоративных групп.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor">
+            <circle cx="24" cy="20" r="9"/><path d="M8 44c0-8.8 7.2-16 16-16s16 7.2 16 16"/>
+            <path d="M36 8l5-5m0 0l-5-5m5 5H30"/>
+          </svg>
+          <h3>Въездной туризм</h3>
+          <p>Организация туров для иностранных гостей по историческим городам — Самарканду, Бухаре, Хиве и Ташкенту.</p>
+          <a class="svc-more" href="#">Подробнее →</a>
+        </div>
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor">
+            <circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c-4 5-6 10-6 16s2 11 6 16M24 8c4 5 6 10 6 16s-2 11-6 16"/>
+          </svg>
+          <h3>Выездной туризм</h3>
+          <p>Туры в Турцию, ОАЭ, Европу, Азию. Авиабилеты, отели, визовая поддержка и комплексные пакеты.</p>
+          <a class="svc-more" href="#">Подробнее →</a>
+        </div>
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor">
+            <path d="M24 4L4 20h6v24h28V20h6L24 4z"/><rect x="18" y="30" width="12" height="14"/>
+          </svg>
+          <h3>Внутренний туризм</h3>
+          <p>Экскурсионные туры по регионам Узбекистана. Отдых в горах Тянь-Шаня, Нуратинские горы, Аральское море.</p>
+          <a class="svc-more" href="#">Подробнее →</a>
+        </div>
+
+        <div class="svc-card">
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor">
+            <rect x="6" y="12" width="36" height="26" rx="2"/>
+            <path d="M6 20h36M16 12V8M32 12V8"/>
+          </svg>
+          <h3>MICE-туризм</h3>
+          <p>Деловые конференции, корпоративные поездки, инсентив-программы и организация специальных мероприятий.</p>
+          <a class="svc-more" href="#">Подробнее →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1584549284497-23e39ee72e68?auto=format&fit=crop&w=900&q=80"
+            alt="Регистан, Самарканд"
+          />
+        </div>
+        <div>
+          <p class="label">О компании</p>
+          <h2 class="section-title">Ваш надёжный<br>партнёр в туризме</h2>
+          <div class="gold-bar"></div>
+          <p class="body-text">Mavrannahr Tour — лицензированная туристическая компания, специализирующаяся на организации путешествий по Центральной Азии и за рубеж. Мы работаем с частными клиентами, группами и корпорациями, предлагая индивидуальный подход к каждому.</p>
+          <p class="body-text" style="margin-top: 14px;">Наша команда знает регион и имеет партнёрские связи с ведущими отелями, авиакомпаниями и туристическими объектами Узбекистана.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-num">12+</div>
+              <div class="stat-lbl">лет на рынке</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">5 000+</div>
+              <div class="stat-lbl">довольных клиентов</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">45+</div>
+              <div class="stat-lbl">направлений</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">120+</div>
+              <div class="stat-lbl">партнёров</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INFO / REQUISITES ── -->
+  <section class="info">
+    <div class="container">
+      <div class="info-head">
+        <p class="label">Контактная информация</p>
+        <h2 class="section-title">Реквизиты компании</h2>
+        <div class="gold-bar"></div>
+        <p class="body-text">Официальная информация в соответствии с требованиями Министерства туризма и культурного наследия Республики Узбекистан.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 21s-7-7.5-7-13a7 7 0 1 1 14 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="8" r="2.5"/>
+          </svg>
+          <p class="info-lbl">Местонахождение</p>
+          <h4>Главный офис</h4>
+          <p>Республика Узбекистан<br>г. Ташкент, Юнусабадский район<br>ул. Амира Темура, 15</p>
+        </div>
+        <div class="info-card">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+          </svg>
+          <p class="info-lbl">Время работы</p>
+          <h4>График приёма</h4>
+          <p>Понедельник — Пятница: 09:00 — 18:00<br>Суббота: 10:00 — 15:00<br>Воскресенье: выходной</p>
+        </div>
+        <div class="info-card">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+          <p class="info-lbl">Руководитель</p>
+          <h4>Каримов Шерзод<br>Алишерович</h4>
+          <p>Директор компании<br>Mavrannahr Tour</p>
+        </div>
+        <div class="info-card">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <p class="info-lbl">Связаться</p>
+          <h4>Телефон и email</h4>
+          <p>+998 71 200-00-00<br>info@mavrannahr.uz<br>Telegram-канал</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">MAVRANNAHR<span> TOUR</span></div>
+        <p class="footer-desc">Лицензированная туристическая компания. Организация въездного, выездного и внутреннего туризма в Республике Узбекистан.</p>
+      </div>
+      <div>
+        <h5>Навигация</h5>
+        <ul>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#">Услуги</a></li>
+          <li><a href="#">Туры</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Услуги</h5>
+        <ul>
+          <li><a href="#">Въездной туризм</a></li>
+          <li><a href="#">Выездной туризм</a></li>
+          <li><a href="#">Внутренний туризм</a></li>
+          <li><a href="#">MICE-туризм</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Контакты</h5>
+        <ul>
+          <li><a href="#">г. Ташкент, ул. Амира Темура, 15</a></li>
+          <li><a href="#">+998 71 200-00-00</a></li>
+          <li><a href="#">info@mavrannahr.uz</a></li>
+          <li><a href="#">Telegram-канал</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">© 2024 Mavrannahr Tour. Все права защищены. Лицензия Министерства туризма и культурного наследия Республики Узбекистан.</div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

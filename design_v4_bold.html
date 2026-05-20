@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mavrannahr Tour — Вариант 4: Редакция</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:     #F4F0E6;
+      --paper-d:   #ECE6D6;
+      --ink:       #0B0B0A;
+      --ink-soft:  #2A2A28;
+      --red:       #D93525;
+      --red-d:     #B22719;
+      --mustard:   #C99B2C;
+      --gray-l:    #D2CDC2;
+      --gray-m:    #8A857A;
+      --gray-d:    #4A4A45;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.55;
+    }
+
+    /* ── NAVBAR — magazine masthead ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--paper);
+      border-bottom: 2px solid var(--ink);
+    }
+    .nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 36px;
+      border-bottom: 1px solid var(--ink);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .nav-top-l { display: flex; gap: 24px; }
+    .nav-top-l span { color: var(--gray-d); }
+    .nav-top-l b { color: var(--red); font-weight: 700; }
+    .nav-top-r { display: flex; gap: 18px; align-items: center; }
+    .nav-lang {
+      display: flex;
+      gap: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .1em;
+    }
+    .nav-lang button {
+      background: none;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      padding: 3px 9px;
+      cursor: pointer;
+      font: inherit;
+      letter-spacing: inherit;
+      text-transform: uppercase;
+    }
+    .nav-lang button.active { background: var(--ink); color: var(--paper); }
+    .nav-lang button:first-child { border-right: none; }
+    .nav-main {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 0 36px;
+      height: 80px;
+    }
+    .nav-logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+    }
+    .nav-logo .dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+    .nav-logo small {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      color: var(--gray-d);
+      text-transform: uppercase;
+      align-self: flex-end;
+      padding-bottom: 8px;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      align-items: stretch;
+      gap: 0;
+    }
+    .nav-links li { display: flex; }
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      font-family: 'Archivo', sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-left: 1px solid var(--gray-l);
+      transition: background .2s, color .2s;
+    }
+    .nav-links a:hover { background: var(--ink); color: var(--paper); }
+    .nav-links li:last-child a { border-right: 1px solid var(--gray-l); }
+
+    /* ── HERO — magazine cover spread ── */
+    .hero {
+      position: relative;
+      padding: 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 80px 1.3fr 1fr 80px;
+      grid-template-rows: auto auto auto;
+      min-height: 720px;
+    }
+    /* vertical labels on margins */
+    .hero-vert-l, .hero-vert-r {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+      padding: 36px 0;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      grid-row: 1 / span 3;
+      justify-content: flex-end;
+      position: relative;
+    }
+    .hero-vert-l { border-right: 1px solid var(--gray-l); }
+    .hero-vert-r {
+      border-left: 1px solid var(--gray-l);
+      grid-column: 4;
+      grid-row: 1 / span 3;
+      transform: rotate(0deg);
+      writing-mode: vertical-lr;
+    }
+    .hero-vert-l b, .hero-vert-r b { color: var(--red); font-weight: 700; }
+    .hero-vert-r span { color: var(--ink); }
+
+    .hero-eye {
+      grid-column: 2 / span 2;
+      padding: 28px 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--gray-l);
+      padding-bottom: 18px;
+    }
+    .hero-eye-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .hero-eye-tag::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--red);
+    }
+    .hero-eye-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      color: var(--gray-d);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .hero-title-area {
+      grid-column: 2;
+      padding: 50px 30px 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-section-num {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-family: 'Anton', sans-serif;
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--paper-d);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(3.2rem, 6.5vw, 6.4rem);
+      line-height: .92;
+      letter-spacing: -.005em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title span {
+      color: var(--red);
+      font-style: italic;
+      display: inline-block;
+    }
+    .hero-title em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -.01em;
+      text-transform: none;
+      color: var(--ink);
+    }
+    .hero-mark {
+      display: inline-block;
+      background: var(--red);
+      color: var(--paper);
+      padding: 0 8px;
+    }
+    .hero-lead {
+      font-family: 'Newsreader', serif;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 480px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-lead::first-letter {
+      font-family: 'Anton', sans-serif;
+      font-size: 3.2rem;
+      float: left;
+      line-height: .9;
+      margin: 6px 12px 0 0;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+    .hero-actions { display: flex; gap: 0; align-items: stretch; }
+    .btn-blk {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+      border: 2px solid var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      transition: background .2s, color .2s;
+    }
+    .btn-blk:hover { background: var(--red); border-color: var(--red); }
+    .btn-blk svg { width: 14px; height: 14px; }
+    .btn-out {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      background: transparent;
+      color: var(--ink);
+      text-decoration: none;
+      border: 2px solid var(--ink);
+      border-left: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s, color .2s;
+    }
+    .btn-out:hover { background: var(--ink); color: var(--paper); }
+
+    .hero-photo-area {
+      grid-column: 3;
+      position: relative;
+      padding: 0;
+      border-left: 1px solid var(--gray-l);
+      overflow: hidden;
+    }
+    .hero-photo-wrap {
+      position: relative;
+      height: 100%;
+      min-height: 480px;
+    }
+    .hero-photo-wrap img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) saturate(.95);
+    }
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .photo-caption b { color: var(--red); }
+    .hero-overlay-num {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.6rem;
+      background: var(--red);
+      color: var(--paper);
+      padding: 4px 12px;
+      letter-spacing: .04em;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--ink);
+      color: var(--paper);
+      overflow: hidden;
+      padding: 14px 0;
+      border-bottom: 2px solid var(--ink);
+    }
+    .ticker-track {
+      display: flex;
+      gap: 36px;
+      white-space: nowrap;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      animation: scroll 38s linear infinite;
+    }
+    .ticker-track span:nth-child(odd) { color: var(--paper); }
+    .ticker-track span:nth-child(even) { color: var(--red); }
+    .ticker-track .dot {
+      color: var(--gray-d);
+      font-size: 1rem;
+      align-self: center;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── DEPARTMENT / SERVICES ── */
+    .dept {
+      padding: 80px 36px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .dept-head {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--ink);
+      margin-bottom: 40px;
+      gap: 24px;
+    }
+    .dept-eye {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+    }
+    .dept-eye b { color: var(--red); }
+    .dept-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      line-height: .9;
+      letter-spacing: -.005em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .dept-title em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+      text-transform: none;
+    }
+    .dept-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+      text-align: right;
+    }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 2px solid var(--ink);
+    }
+    .dept-cell {
+      padding: 36px 32px;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 26px;
+      position: relative;
+      transition: background .2s;
+    }
+    .dept-cell:nth-child(2n) { border-right: none; }
+    .dept-cell:nth-child(n+3) { border-bottom: none; }
+    .dept-cell:hover { background: var(--ink); color: var(--paper); }
+    .dept-cell:hover .dept-cell-num { color: var(--red); }
+    .dept-cell:hover .dept-cell-meta { color: var(--gray-l); }
+    .dept-cell:hover .dept-cell-cta { color: var(--paper); border-color: var(--paper); }
+    .dept-cell-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 5.4rem;
+      line-height: .85;
+      color: var(--red);
+      letter-spacing: -.01em;
+    }
+    .dept-cell-body h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.85rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -.005em;
+      margin-bottom: 4px;
+    }
+    .dept-cell-body h3 em {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      font-style: normal;
+      color: var(--red);
+      letter-spacing: .14em;
+      display: inline-block;
+      margin-left: 6px;
+      vertical-align: 4px;
+    }
+    .dept-cell-body p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 14px 0 18px;
+      max-width: 440px;
+    }
+    .dept-cell-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gray-m);
+      display: flex;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+    .dept-cell-cta {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: .74rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── FEATURE / ABOUT ── */
+    .feature {
+      padding: 90px 36px;
+      border-bottom: 2px solid var(--ink);
+      position: relative;
+    }
+    .feature-bgnum {
+      position: absolute;
+      top: 60px;
+      right: 36px;
+      font-family: 'Anton', sans-serif;
+      font-size: 14rem;
+      line-height: .8;
+      color: var(--paper-d);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .feature-eye {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .feature-eye b { color: var(--red); }
+    .feature-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(3.4rem, 7vw, 6.4rem);
+      line-height: .9;
+      letter-spacing: -.01em;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      max-width: 1000px;
+      position: relative;
+      z-index: 1;
+    }
+    .feature-title em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--red);
+      letter-spacing: -.02em;
+    }
+    .feature-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .feature-text-col {
+      grid-column: span 2;
+      column-count: 2;
+      column-gap: 36px;
+    }
+    .feature-text-col p {
+      font-family: 'Newsreader', serif;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+      break-inside: avoid;
+    }
+    .feature-text-col p:first-child::first-letter {
+      font-family: 'Anton', sans-serif;
+      font-size: 5.2rem;
+      float: left;
+      line-height: .85;
+      margin: 6px 14px 0 0;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+    .feature-side .photo-card {
+      border: 2px solid var(--ink);
+      margin-bottom: 24px;
+    }
+    .feature-side .photo-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 2px solid var(--ink);
+    }
+    .feature-side .photo-card-cap {
+      padding: 10px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .feature-side .photo-card-cap b { color: var(--red); }
+    .quote-block {
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: 28px 0;
+      margin-top: 8px;
+    }
+    .quote-block .q {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-size: 1.45rem;
+      line-height: 1.35;
+      color: var(--ink);
+      letter-spacing: -.005em;
+    }
+    .quote-block .q b {
+      font-family: 'Anton', sans-serif;
+      font-style: normal;
+      color: var(--red);
+      display: inline;
+      letter-spacing: 0;
+    }
+    .quote-block .qmeta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-top: 16px;
+      color: var(--gray-d);
+    }
+
+    /* ── FIGURES / NUMBERS ── */
+    .figures {
+      padding: 80px 36px;
+      border-bottom: 2px solid var(--ink);
+      background: var(--paper-d);
+    }
+    .figures-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      gap: 24px;
+    }
+    .figures-head h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.6rem;
+      line-height: .9;
+      text-transform: uppercase;
+      letter-spacing: -.005em;
+    }
+    .figures-head h3 em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+      text-transform: none;
+    }
+    .figures-head .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+      text-align: right;
+    }
+    .figures-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-left: 1px solid var(--ink);
+    }
+    .fig-cell {
+      padding: 30px 24px;
+      border-right: 1px solid var(--ink);
+    }
+    .fig-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+    .fig-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 5.2rem;
+      line-height: .85;
+      color: var(--ink);
+      letter-spacing: -.02em;
+      margin-bottom: 14px;
+    }
+    .fig-num em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+      font-size: 2.6rem;
+      letter-spacing: 0;
+      margin-left: 4px;
+    }
+    .fig-lbl {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--ink-soft);
+    }
+    .fig-lbl b {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ── MASTHEAD / INFO ── */
+    .masthead {
+      padding: 90px 36px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .masthead-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding-bottom: 32px;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 40px;
+      gap: 24px;
+    }
+    .masthead-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      line-height: .9;
+      text-transform: uppercase;
+      letter-spacing: -.005em;
+    }
+    .masthead-title em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+      text-transform: none;
+    }
+    .masthead-eye {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+      text-align: right;
+    }
+    .masthead-eye b { color: var(--red); display: block; margin-top: 6px; font-weight: 700; }
+
+    .mast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--ink);
+    }
+    .mast-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 80px;
+      align-items: start;
+      padding: 28px 24px;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      gap: 24px;
+      position: relative;
+    }
+    .mast-row .num {
+      font-family: 'Anton', sans-serif;
+      font-size: .8rem;
+      letter-spacing: .18em;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+    .mast-row .num span {
+      display: block;
+      font-size: 2.4rem;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      margin-top: 4px;
+    }
+    .mast-row .k {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-d);
+    }
+    .mast-row .v {
+      font-family: 'Newsreader', serif;
+      font-size: 1.04rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+    .mast-row .v b {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: 1.04rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .mast-row .v em {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      font-style: normal;
+      color: var(--red);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 80px 36px 40px;
+    }
+    .foot-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid var(--gray-d);
+      margin-bottom: 30px;
+    }
+    .foot-logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 3.2rem;
+      line-height: .9;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .foot-logo .dot { width: 16px; height: 16px; background: var(--red); border-radius: 50%; display: inline-block; }
+    .foot-desc {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--gray-l);
+      max-width: 360px;
+      margin-bottom: 20px;
+    }
+    .foot-issue {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-m);
+    }
+    .foot-issue b { color: var(--red); font-weight: 700; }
+    footer h5 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 10px; }
+    footer ul a {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      color: var(--gray-l);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    footer ul a:hover { color: var(--red); }
+    .foot-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .foot-bottom-l {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gray-m);
+      line-height: 1.6;
+    }
+    .foot-bottom-l b { color: var(--paper); font-weight: 700; }
+    .foot-barcode {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: -.01em;
+      color: var(--gray-l);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .foot-barcode em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+      font-size: 1.2rem;
+      letter-spacing: 0;
+      margin-left: 6px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-top { padding: 8px 18px; flex-wrap: wrap; gap: 8px; }
+      .nav-main { padding: 0 18px; height: auto; flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-logo { padding: 14px 0 6px; }
+      .nav-links { overflow-x: auto; }
+      .hero-grid { grid-template-columns: 1fr; min-height: 0; }
+      .hero-vert-l, .hero-vert-r { display: none; }
+      .hero-eye { grid-column: 1; padding: 18px 20px; }
+      .hero-title-area { grid-column: 1; padding: 36px 20px 48px; }
+      .hero-photo-area { grid-column: 1; min-height: 380px; border-left: none; border-top: 2px solid var(--ink); }
+      .hero-section-num { font-size: 4rem; top: 20px; right: 20px; }
+      .hero-actions { flex-wrap: wrap; }
+      .btn-out { border-left: 2px solid var(--ink); border-top: 0; }
+      .ticker-track { font-size: 1.1rem; gap: 24px; }
+      .dept { padding: 50px 20px; }
+      .dept-head { grid-template-columns: 1fr; gap: 12px; text-align: left; }
+      .dept-title { text-align: left; }
+      .dept-meta { text-align: left; }
+      .dept-grid { grid-template-columns: 1fr; }
+      .dept-cell { border-right: none !important; border-bottom: 1px solid var(--ink) !important; grid-template-columns: 64px 1fr; gap: 18px; padding: 28px 20px; }
+      .dept-cell:last-child { border-bottom: none !important; }
+      .dept-cell-num { font-size: 3.6rem; }
+      .feature { padding: 60px 20px; }
+      .feature-bgnum { font-size: 7rem; top: 30px; right: 20px; }
+      .feature-body { grid-template-columns: 1fr; gap: 36px; }
+      .feature-text-col { grid-column: 1; column-count: 1; }
+      .figures { padding: 50px 20px; }
+      .figures-head { flex-direction: column; align-items: flex-start; }
+      .figures-grid { grid-template-columns: 1fr 1fr; }
+      .fig-cell:nth-child(2) { border-right: none; }
+      .fig-cell:nth-child(n+3) { border-top: 1px solid var(--ink); }
+      .fig-num { font-size: 3.8rem; }
+      .masthead { padding: 60px 20px; }
+      .masthead-head { flex-direction: column; align-items: flex-start; }
+      .mast-grid { grid-template-columns: 1fr; }
+      .mast-row { grid-template-columns: 120px 1fr; padding: 22px 18px; }
+      .mast-row .num span { font-size: 1.8rem; }
+      .foot-top { grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 36px; }
+      .foot-logo { font-size: 2.4rem; }
+      footer { padding: 50px 20px 30px; }
+    }
+    @media (max-width: 640px) {
+      .figures-grid { grid-template-columns: 1fr; }
+      .fig-cell { border-right: none !important; border-top: 1px solid var(--ink); }
+      .fig-cell:first-child { border-top: none; }
+      .foot-top { grid-template-columns: 1fr; }
+      .foot-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR — masthead ── -->
+  <nav>
+    <div class="nav-top">
+      <div class="nav-top-l">
+        <span>Издание №<b>26</b></span>
+        <span>Май <b>2026</b></span>
+        <span>Ташкент · Узбекистан</span>
+      </div>
+      <div class="nav-top-r">
+        <span>+998 71 200-00-00</span>
+        <div class="nav-lang">
+          <button class="active">РУ</button>
+          <button>O‘Z</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-main">
+      <a href="#" class="nav-logo">
+        <span class="dot"></span>Mavrannahr<small>est. 2012 · Tour Operator</small>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Цифры</a></li>
+        <li><a href="#">Реквизиты</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO — magazine cover spread ── -->
+  <section class="hero">
+    <div class="hero-grid">
+
+      <div class="hero-vert-l">
+        <span><b>№ 26</b> · COVER STORY · MAY 2026 · TASHKENT</span>
+      </div>
+
+      <div class="hero-eye">
+        <div class="hero-eye-tag">Cover Story · 01</div>
+        <div class="hero-eye-meta">Reading time · 4 min · Ed. by Sh.K.</div>
+      </div>
+
+      <div class="hero-title-area">
+        <div class="hero-section-num">№01</div>
+        <h1 class="hero-title">
+          Узбекистан<br>
+          <em>как</em> <span>живой</span><br>
+          <span class="hero-mark">текст.</span>
+        </h1>
+        <p class="hero-lead">Маленькая туристическая компания из Ташкента, которая четырнадцатый год подряд водит людей по Узбекистану и отправляет их за его пределы. Без call-центров, без шаблонов, без курсов «как продать тур за минуту».</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-blk">Открыть номер
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#" class="btn-out">Содержание</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-area">
+        <div class="hero-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1604608672516-f1b9b1d1e63b?auto=format&fit=crop&w=1200&q=80" alt="Регистан, Самарканд" />
+          <div class="hero-overlay-num">PLATE 01</div>
+          <div class="photo-caption">
+            <span>Регистан, Самарканд</span>
+            <span><b>фото · А. Юсупов</b></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-vert-r">
+        <span>Mavrannahr · Tour Operator · <b>UZ-0042</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TICKER ── -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Самарканд</span><span class="dot">●</span><span>Бухара</span><span class="dot">●</span><span>Хива</span><span class="dot">●</span><span>Ташкент</span><span class="dot">●</span><span>Фергана</span><span class="dot">●</span><span>Чимган</span><span class="dot">●</span><span>Айдаркуль</span><span class="dot">●</span><span>Нурата</span><span class="dot">●</span><span>Термез</span><span class="dot">●</span>
+      <span>Самарканд</span><span class="dot">●</span><span>Бухара</span><span class="dot">●</span><span>Хива</span><span class="dot">●</span><span>Ташкент</span><span class="dot">●</span><span>Фергана</span><span class="dot">●</span><span>Чимган</span><span class="dot">●</span><span>Айдаркуль</span><span class="dot">●</span><span>Нурата</span><span class="dot">●</span><span>Термез</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- ── DEPARTMENT / SERVICES ── -->
+  <section class="dept">
+    <div class="dept-head">
+      <div class="dept-eye">Раздел · <b>02</b><br>Что мы делаем</div>
+      <h2 class="dept-title">Четыре <em>направления</em><br>работы</h2>
+      <div class="dept-meta">Departments<br>01 → 04</div>
+    </div>
+
+    <div class="dept-grid">
+
+      <div class="dept-cell">
+        <div class="dept-cell-num">01</div>
+        <div class="dept-cell-body">
+          <h3>Въездной<br>туризм <em>·  inbound</em></h3>
+          <p>Принимаем иностранных гостей в Узбекистане: встреча в аэропорту, лицензированные гиды на восьми языках, отели, маршруты по историческим городам, визовое сопровождение.</p>
+          <div class="dept-cell-meta"><span>38 стран</span><span>·</span><span>180+ маршрутов</span></div>
+          <a href="#" class="dept-cell-cta">Читать раздел →</a>
+        </div>
+      </div>
+
+      <div class="dept-cell">
+        <div class="dept-cell-num">02</div>
+        <div class="dept-cell-body">
+          <h3>Выездной<br>туризм <em>·  outbound</em></h3>
+          <p>Отправляем граждан Узбекистана за рубеж — Турция, ОАЭ, Грузия, Европа, Юго-Восточная Азия. Подбираем отели, делаем визы, выписываем авиабилеты и страховку.</p>
+          <div class="dept-cell-meta"><span>42 страны</span><span>·</span><span>visa-ready</span></div>
+          <a href="#" class="dept-cell-cta">Читать раздел →</a>
+        </div>
+      </div>
+
+      <div class="dept-cell">
+        <div class="dept-cell-num">03</div>
+        <div class="dept-cell-body">
+          <h3>Внутренний<br>туризм <em>·  domestic</em></h3>
+          <p>Туры по Узбекистану для местных. Чимган и Бельдерсай зимой, Айдаркуль и Нуратинские горы летом, гастрономические уикенды в Самарканде и Бухаре.</p>
+          <div class="dept-cell-meta"><span>27 маршрутов</span><span>·</span><span>круглый год</span></div>
+          <a href="#" class="dept-cell-cta">Читать раздел →</a>
+        </div>
+      </div>
+
+      <div class="dept-cell">
+        <div class="dept-cell-num">04</div>
+        <div class="dept-cell-body">
+          <h3>MICE<br>и события <em>·  meetings</em></h3>
+          <p>Конференции, выставки, инсентив-программы, корпоративные выезды. Договариваемся с площадками, привозим переводчиков, строим логистику и культурную программу.</p>
+          <div class="dept-cell-meta"><span>под ключ</span><span>·</span><span>под отчёт</span></div>
+          <a href="#" class="dept-cell-cta">Читать раздел →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FEATURE / ABOUT ── -->
+  <section class="feature">
+    <div class="feature-bgnum">03</div>
+    <div class="feature-eye">Раздел · <b>03</b> · Feature · О компании</div>
+    <h2 class="feature-title">
+      Мы знаем эту страну<br>
+      <em>как</em> старый знакомый —<br>
+      без приукрашиваний.
+    </h2>
+
+    <div class="feature-body">
+      <div class="feature-text-col">
+        <p>Mavrannahr Tour — небольшая туристическая компания, основанная в Ташкенте весной 2012 года. У нас 18 человек в штате: гиды-историки, координаторы, водители, переводчики. Половина из них работает с первого года.</p>
+        <p>Мы умышленно остаёмся маленькими. Когда вы пишете нам в Telegram — отвечает живой человек, обычно директор или один из координаторов. Никаких ботов, никаких форм «оставьте заявку и мы перезвоним в течение трёх дней».</p>
+        <p>В Узбекистане мы работаем с лицензией Министерства туризма с 2012 года — нашему регистрационному номеру UZ-0042 уже четырнадцать лет. За это время по нашим маршрутам прошло больше пяти тысяч путешественников из тридцати восьми стран.</p>
+        <p>Если коротко — мы делаем туризм по-старинке: руками, ногами и сердцем. Если развёрнуто — приезжайте, расскажем за чаем.</p>
+      </div>
+
+      <div class="feature-side">
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1591017403286-fd8493524e1e?auto=format&fit=crop&w=900&q=80" alt="Бухара" />
+          <div class="photo-card-cap"><span>Plate 02 · Бухара</span><b>2024</b></div>
+        </div>
+
+        <div class="quote-block">
+          <div class="q">Хороший тур — это <b>не маршрут</b>, а интонация, с которой о стране рассказывают.</div>
+          <div class="qmeta">— Каримов Ш. А., директор</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FIGURES / NUMBERS ── -->
+  <section class="figures">
+    <div class="figures-head">
+      <h3>Цифры <em>номера</em></h3>
+      <div class="meta">Раздел 04 · Statistics<br>обновлено: май 2026</div>
+    </div>
+    <div class="figures-grid">
+      <div class="fig-cell">
+        <div class="fig-tag">№ 01 · опыт</div>
+        <div class="fig-num">14<em>лет</em></div>
+        <div class="fig-lbl"><b>На рынке с 2012</b>с лицензией Министерства туризма Республики Узбекистан</div>
+      </div>
+      <div class="fig-cell">
+        <div class="fig-tag">№ 02 · гости</div>
+        <div class="fig-num">5 280</div>
+        <div class="fig-lbl"><b>Путешественников</b>проехало по Узбекистану и за его пределами</div>
+      </div>
+      <div class="fig-cell">
+        <div class="fig-tag">№ 03 · страны</div>
+        <div class="fig-num">38</div>
+        <div class="fig-lbl"><b>Стран мира</b>откуда к нам приезжали гости</div>
+      </div>
+      <div class="fig-cell">
+        <div class="fig-tag">№ 04 · партнёры</div>
+        <div class="fig-num">120<em>+</em></div>
+        <div class="fig-lbl"><b>Партнёров</b>отели, гиды, перевозчики, авиакомпании</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MASTHEAD / INFO ── -->
+  <section class="masthead">
+    <div class="masthead-head">
+      <h2 class="masthead-title">Выходные<br><em>данные</em> · Masthead</h2>
+      <div class="masthead-eye">Раздел · 05 · Реквизиты<br><b>Tour Operator UZ-0042</b></div>
+    </div>
+
+    <div class="mast-grid">
+      <div class="mast-row">
+        <div class="num">№ 01 · LOC<span>UZ</span></div>
+        <div>
+          <div class="k">Местонахождение</div>
+          <div class="v">
+            <b>Главный офис</b>
+            Республика Узбекистан, г. Ташкент,<br>
+            Юнусабадский район, ул. Амира Темура, 15<br>
+            <em>с 2012</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="mast-row">
+        <div class="num">№ 02 · HRS<span>09—18</span></div>
+        <div>
+          <div class="k">Время работы</div>
+          <div class="v">
+            <b>График приёма</b>
+            Понедельник — Пятница: 09:00 — 18:00<br>
+            Суббота: 10:00 — 15:00<br>
+            Воскресенье: выходной
+          </div>
+        </div>
+      </div>
+
+      <div class="mast-row">
+        <div class="num">№ 03 · DIR<span>ШК</span></div>
+        <div>
+          <div class="k">Руководитель</div>
+          <div class="v">
+            <b>Каримов Шерзод Алишерович</b>
+            Директор, основатель компании<br>
+            <em>в должности с 2012</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="mast-row">
+        <div class="num">№ 04 · COM<span>tg</span></div>
+        <div>
+          <div class="k">Связь</div>
+          <div class="v">
+            <b>Контакты редакции</b>
+            +998 71 200-00-00<br>
+            info@mavrannahr.uz<br>
+            Telegram: @mavrannahr_tour
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo"><span class="dot"></span>Mavrannahr</div>
+        <p class="foot-desc">Маленькая туристическая компания из Ташкента, ведущая дела с весны 2012 года. Принимаем гостей, отправляем своих и не делаем из туризма конвейер.</p>
+        <div class="foot-issue">Издание №<b>26</b> · Май 2026 · Tashkent</div>
+      </div>
+      <div>
+        <h5>Разделы</h5>
+        <ul>
+          <li><a href="#">Cover</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Feature</a></li>
+          <li><a href="#">Statistics</a></li>
+          <li><a href="#">Masthead</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Departments</h5>
+        <ul>
+          <li><a href="#">01 · Inbound</a></li>
+          <li><a href="#">02 · Outbound</a></li>
+          <li><a href="#">03 · Domestic</a></li>
+          <li><a href="#">04 · MICE</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Связь</h5>
+        <ul>
+          <li><a href="#">ул. Амира Темура, 15</a></li>
+          <li><a href="#">+998 71 200-00-00</a></li>
+          <li><a href="#">info@mavrannahr.uz</a></li>
+          <li><a href="#">@mavrannahr_tour</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-bottom-l">
+        © 2012—2026 · <b>Mavrannahr Tour</b><br>
+        Tour Operator licence <b>UZ-0042</b> · Минтуризм РУз<br>
+        Сделано в Ташкенте · сверстано вручную, без шаблонов
+      </div>
+      <div class="foot-barcode">
+        <em>Issue</em>26<em>· May</em>2026
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

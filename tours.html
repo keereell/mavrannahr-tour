@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8B3A3A" />
+
+  <title data-i18n="page.tours.title">Sayohatlar — Mavrannahr Tour</title>
+  <meta name="description" content="Mashhur marshrutlar. Individual va guruhli turlar." data-i18n="page.tours.desc" />
+  <link rel="canonical" href="https://mavrannahr.uz/tours.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mavrannahr.uz/tours.html" />
+  <meta property="og:title" content="Tours — Mavrannahr Tour" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1756914374243-b645fe72e100?auto=format&fit=crop&w=1200&h=630&q=80" />
+  <meta property="og:locale" content="uz_UZ" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/partials.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+  <script src="js/tours.js" defer></script>
+  <script src="js/cookies.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-to-content" href="#main" data-i18n="nav.skip">Asosiy mazmunga o'tish</a>
+
+  <div data-include="partials/navbar.html"></div>
+
+  <main id="main">
+
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+          <a href="index.html" data-i18n="crumbs.home">Bosh sahifa</a>
+          <span class="sep">·</span>
+          <span class="current" data-i18n="nav.tours">Sayohatlar</span>
+        </nav>
+        <h1 class="page-title"><span data-i18n="nav.tours">Sayohatlar</span></h1>
+        <p class="page-desc" data-i18n="tours.intro">Eng ko'p so'raladigan sayohatlar. Barcha marshrutlar moslashtirilishi mumkin.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter: by category -->
+        <div class="filter-tabs" role="tablist" aria-label="Tour categories">
+          <button type="button" role="tab" class="filter-tab active" data-filter="all" aria-selected="true" data-i18n="tours.filter.all">Barchasi</button>
+          <button type="button" role="tab" class="filter-tab" data-filter="inbound" aria-selected="false" data-i18n="tours.filter.inbound">Kiruvchi</button>
+          <button type="button" role="tab" class="filter-tab" data-filter="outbound" aria-selected="false" data-i18n="tours.filter.outbound">Chiquvchi</button>
+          <button type="button" role="tab" class="filter-tab" data-filter="domestic" aria-selected="false" data-i18n="tours.filter.domestic">Ichki</button>
+          <button type="button" role="tab" class="filter-tab" data-filter="mice" aria-selected="false" data-i18n="tours.filter.mice">MICE</button>
+        </div>
+
+        <!-- Filter: by theme -->
+        <div class="theme-chips" role="group" aria-label="Tour themes">
+          <span class="theme-chips-lbl" data-i18n="theme.label">Mavzu bo'yicha:</span>
+          <button type="button" class="theme-chip active" data-theme="all" data-i18n="theme.all">Hammasi</button>
+          <button type="button" class="theme-chip" data-theme="culture" data-i18n="theme.culture">Madaniyat</button>
+          <button type="button" class="theme-chip" data-theme="beach" data-i18n="theme.beach">Plyaj</button>
+          <button type="button" class="theme-chip" data-theme="mountain" data-i18n="theme.mountain">Tog'lar</button>
+          <button type="button" class="theme-chip" data-theme="food" data-i18n="theme.food">Gastronomik</button>
+          <button type="button" class="theme-chip" data-theme="business" data-i18n="theme.business">Biznes</button>
+        </div>
+
+        <!-- Tours grid (12) -->
+        <div class="tours-grid tours-grid-4col">
+
+          <article class="tour-card" data-theme="culture" data-category="inbound" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1696009169178-9b25161e2b63?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Samarqand" />
+              <span class="tour-chip" data-i18n="cat.inbound">Kiruvchi</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.1.name">Buyuk Ipak yo'lining marvaridlari</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.1.dur">7 kun</span>
+                <span>·</span>
+                <span>Samarqand · Buxoro · Xiva</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$890</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="culture" data-category="inbound" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1662468783857-4d29858fbf5d?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Buxoro" />
+              <span class="tour-chip" data-i18n="cat.inbound">Kiruvchi</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.2.name">Samarqand — Buxoro — Xiva</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.2.dur">5 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$640</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="food" data-category="inbound" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1671048116663-eda1518a169b?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Plov" />
+              <span class="tour-chip" data-i18n="cat.inbound">Kiruvchi</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.3.name">Gastronomik O'zbekiston</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.3.dur">6 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$720</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="beach" data-category="outbound" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1672593657366-8219c888c243?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Antalya" />
+              <span class="tour-chip" data-i18n="cat.outbound">Chiquvchi</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.4.name">Turkiya: hammasi kiritilgan Antalyaada</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.4.dur">8 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$560</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="culture" data-category="outbound" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Dubay" />
+              <span class="tour-chip" data-i18n="cat.outbound">Chiquvchi</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.5.name">Dubay — zamonaviy ertak</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.5.dur">7 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$890</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="mountain" data-category="outbound" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1692803341595-dd131eb0ea51?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Gruziya" />
+              <span class="tour-chip" data-i18n="cat.outbound">Chiquvchi</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.6.name">Gruziya: sharob va tog'lar</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.6.dur">6 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$480</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="mountain" data-category="domestic" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1594629609174-00db53036357?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Chimg'on" />
+              <span class="tour-chip" data-i18n="cat.domestic">Ichki</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.7.name">Chimg'on va Beldersoy</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.7.dur">2 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$95</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="mountain" data-category="domestic" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1585735248142-6f8115c4acbb?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Oydarko'l" />
+              <span class="tour-chip" data-i18n="cat.domestic">Ichki</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.8.name">Oydarko'l — yurtalar va cho'l</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.8.dur">3 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$180</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="mountain" data-category="domestic" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1711274022769-16016a497e08?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Nurota" />
+              <span class="tour-chip" data-i18n="cat.domestic">Ichki</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.9.name">Nurota tog'lari va petrogliflar</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.9.dur">4 kun</span>
+              </div>
+              <div class="tour-price">
+                <span class="tour-price-lbl" data-i18n="common.from">dan</span>
+                <span class="tour-price-val">$240</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="business" data-category="mice" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1571645163064-77faa9676a46?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Korporativ" />
+              <span class="tour-chip" data-i18n="cat.mice">MICE</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.10.name">Korporativ chiqish — Samarqand</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.10.dur">3 kun</span>
+              </div>
+              <div class="tour-price tour-price-rfq">
+                <span class="tour-price-val" data-i18n="common.by_request">Talab bo'yicha</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="business" data-category="mice" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1758630737900-a28682c5aa69?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Konferensiya" />
+              <span class="tour-chip" data-i18n="cat.mice">MICE</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.11.name">Konferensiya — Tashkent City</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.11.dur">1–5 kun</span>
+              </div>
+              <div class="tour-price tour-price-rfq">
+                <span class="tour-price-val" data-i18n="common.by_request">Talab bo'yicha</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tour-card" data-theme="business" data-category="mice" data-animate>
+            <div class="tour-img">
+              <img src="https://images.unsplash.com/photo-1594629609174-00db53036357?auto=format&fit=crop&w=600&q=80" loading="lazy" width="600" height="400" alt="Team building" />
+              <span class="tour-chip" data-i18n="cat.mice">MICE</span>
+            </div>
+            <div class="tour-body">
+              <h3 data-i18n="tour.12.name">Chimg'onda team-building</h3>
+              <div class="tour-meta">
+                <span class="dur" data-i18n="tour.12.dur">2 kun</span>
+              </div>
+              <div class="tour-price tour-price-rfq">
+                <span class="tour-price-val" data-i18n="common.by_request">Talab bo'yicha</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Custom tour CTA -->
+        <div class="cta-section" style="margin-top: 64px; padding: 56px 40px;">
+          <h2 data-i18n="tours.cta.title">Mos sayohatni topa olmadingizmi?</h2>
+          <p data-i18n="tours.cta.desc">Sizning xohishlaringizga ko'ra individual marshrut tuzamiz.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-fill" data-i18n="tours.cta.btn">Individual sayohatni so'rang</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+</body>
+</html>

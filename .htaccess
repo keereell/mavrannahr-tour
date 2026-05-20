@@ -1,0 +1,58 @@
+# Apache config for Mavrannahr Tour
+# Drop this in the web root if hosting on Apache (cPanel, shared hosting)
+
+# ─── Error pages ───
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 503 /503.html
+ErrorDocument 403 /404.html
+
+# ─── HTTPS enforcement ───
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ─── Security headers ───
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Cache control
+  <FilesMatch "\.(css|js|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(jpg|jpeg|png|webp|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+
+  # No indexing for partials
+  <FilesMatch "^partials/">
+    Header set X-Robots-Tag "noindex"
+  </FilesMatch>
+</IfModule>
+
+# ─── Compression ───
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ─── MIME types ───
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest .json
+</IfModule>
+
+# Hide partials from direct access (optional — they're injected via JS anyway)
+# <Directory "partials">
+#   Options -Indexes
+# </Directory>

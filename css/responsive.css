@@ -1,0 +1,338 @@
+/* ============================================
+   Mavrannahr Tour — responsive.css
+   Media queries + Print styles
+   ============================================ */
+
+/* ─── TABLET (≤ 1024px) ─── */
+@media (max-width: 1024px) {
+  .section {
+    padding: 72px 28px;
+  }
+
+  .container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .nav {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-lang {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-burger {
+    display: inline-flex;
+  }
+
+  .page-header {
+    padding: calc(var(--nav-height) + 60px) 28px 50px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 56px 28px 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 64px 28px;
+  }
+}
+
+/* ─── MOBILE (≤ 640px) ─── */
+@media (max-width: 640px) {
+  :root {
+    --space-xl: 28px;
+    --space-2xl: 64px;
+  }
+
+  .section {
+    padding: 56px 20px;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav {
+    padding: 0 20px;
+  }
+
+  .nav-logo {
+    font-size: 1.15rem;
+  }
+
+  .page-header {
+    padding: calc(var(--nav-height) + 40px) 20px 40px;
+  }
+
+  /* Buttons stack better on mobile */
+  .btn-fill,
+  .btn-outline,
+  .btn-outline-light {
+    padding: 13px 28px;
+    font-size: 0.72rem;
+  }
+
+  /* Forms */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 48px 20px 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 48px 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  /* Cookie banner mobile — sits above mobile-cta */
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    bottom: 78px;
+    left: 12px;
+    right: 12px;
+    padding: 20px 22px;
+  }
+
+  /* Top back */
+  .top-back {
+    bottom: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* FAQ */
+  .faq-trigger {
+    font-size: 0.95rem;
+    padding: 18px 0;
+  }
+
+  /* Cards smaller padding */
+  .card,
+  .card-bordered,
+  .svc-card,
+  .info-card {
+    padding: 28px 22px;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    left: 7px;
+  }
+
+  .timeline-item::before {
+    left: -28px;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Filter tabs scrollable on mobile */
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-bottom: 32px;
+    scrollbar-width: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    font-size: 0.72rem;
+  }
+}
+
+/* ─── EXTRA SMALL (≤ 380px) ─── */
+@media (max-width: 380px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ═════════════════════════════════════════════
+   PRINT STYLES
+   Для печати реквизитов / контактов
+   ═════════════════════════════════════════════ */
+@media print {
+  /* hide interactive / non-content */
+  .nav,
+  .nav-mobile,
+  .nav-burger,
+  .cookie-banner,
+  .top-back,
+  .skip-to-content,
+  .cta-section,
+  .form,
+  .footer-social,
+  .nav-lang,
+  iframe,
+  .filter-tabs,
+  .btn,
+  .faq-trigger .faq-mark,
+  [data-animate] {
+    display: none !important;
+  }
+
+  /* Force readability */
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+  a[href^="http"]::after,
+  a[href^="mailto"]::after,
+  a[href^="tel"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555555;
+  }
+
+  /* Expand sections */
+  .section,
+  .page-header {
+    padding: 18pt 0 !important;
+    page-break-inside: avoid;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+  }
+
+  /* Animation reset */
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Show full FAQ */
+  .faq-panel {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .faq-panel-inner {
+    padding-bottom: 12pt;
+  }
+
+  /* Image strategy */
+  .hero-image,
+  .about-img,
+  .tour-img,
+  .team-photo {
+    page-break-inside: avoid;
+  }
+
+  /* Info cards: clean for printing */
+  .info-card,
+  .card,
+  .card-bordered {
+    border: 1px solid #cccccc !important;
+    background: #ffffff !important;
+    padding: 12pt !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .info-card-lbl,
+  .section-label,
+  .terra-bar {
+    color: #555555 !important;
+    background: transparent !important;
+  }
+
+  .terra-bar {
+    border-top: 2pt solid #000000;
+    width: 24pt;
+    margin-bottom: 8pt;
+  }
+
+  /* Stats */
+  .stat-num {
+    color: #000000 !important;
+  }
+
+  /* Print page header */
+  @page {
+    margin: 18mm;
+  }
+
+  /* Footer for print */
+  .footer {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-top: 1pt solid #cccccc !important;
+    padding: 12pt 0 !important;
+  }
+
+  .footer ul a {
+    color: #000000 !important;
+  }
+}

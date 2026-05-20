@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8B3A3A" />
+
+  <title>503 — Texnik ishlar · Mavrannahr Tour</title>
+  <meta name="description" content="Sayt yangilanmoqda. Tez orada qaytamiz." />
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="60" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/partials.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="error-body">
+
+  <a class="skip-to-content" href="#main" data-i18n="nav.skip">Asosiy mazmunga o'tish</a>
+
+  <div data-include="partials/navbar.html"></div>
+
+  <main id="main" class="error-page">
+
+    <span class="error-star" style="top: 12%; left: 14%;"></span>
+    <span class="error-star" style="top: 28%; left: 84%; animation-delay: 0.6s;"></span>
+    <span class="error-star" style="top: 65%; left: 10%; animation-delay: 1.2s;"></span>
+    <span class="error-star" style="top: 75%; left: 86%; animation-delay: 1.8s;"></span>
+
+    <div class="error-content">
+
+      <!-- ── SVG: Closed door with handwritten "back soon" sign ── -->
+      <div class="error-illustration" aria-hidden="true">
+        <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- ground -->
+          <ellipse cx="180" cy="240" rx="140" ry="6" class="illu-ground" />
+
+          <!-- wall around door -->
+          <rect x="80" y="40" width="200" height="200" fill="#F4ECDC" stroke="#C9B98F" stroke-width="1" />
+          <!-- decorative tile pattern -->
+          <g opacity="0.15" stroke="#8B3A3A" stroke-width="1" fill="none">
+            <path d="M 90 60 L 100 50 L 110 60 L 100 70 Z" />
+            <path d="M 250 60 L 260 50 L 270 60 L 260 70 Z" />
+            <path d="M 90 220 L 100 210 L 110 220 L 100 230 Z" />
+            <path d="M 250 220 L 260 210 L 270 220 L 260 230 Z" />
+          </g>
+
+          <!-- door arch -->
+          <path d="M 130 240 L 130 130 Q 130 90 180 90 Q 230 90 230 130 L 230 240 Z"
+                fill="#8B3A3A" stroke="#1A1A1A" stroke-width="2.5" />
+          <!-- door inner panels -->
+          <path d="M 140 235 L 140 140 Q 140 100 180 100 Q 220 100 220 140 L 220 235 Z"
+                fill="none" stroke="#6E2D2D" stroke-width="1" opacity="0.5" />
+          <!-- vertical seam (double door) -->
+          <line x1="180" y1="100" x2="180" y2="240" stroke="#1A1A1A" stroke-width="1.5" />
+          <!-- door panel decorations -->
+          <circle cx="160" cy="155" r="6" fill="none" stroke="#C9A84C" stroke-width="1" />
+          <circle cx="200" cy="155" r="6" fill="none" stroke="#C9A84C" stroke-width="1" />
+          <rect x="153" y="190" width="14" height="30" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.7" />
+          <rect x="193" y="190" width="14" height="30" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.7" />
+          <!-- door handles -->
+          <circle cx="170" cy="175" r="2.5" fill="#C9A84C" />
+          <circle cx="190" cy="175" r="2.5" fill="#C9A84C" />
+
+          <!-- "Back soon" sign hanging on door (swaying) -->
+          <g class="anim-sway" style="transform-origin: 180px 115px">
+            <!-- string -->
+            <line x1="180" y1="115" x2="180" y2="135" stroke="#1A1A1A" stroke-width="0.8" />
+            <!-- card -->
+            <rect x="140" y="135" width="80" height="48" fill="#FFFAEF" stroke="#1A1A1A" stroke-width="1.2" />
+            <!-- card shadow -->
+            <rect x="142" y="137" width="80" height="48" fill="#1A1A1A" opacity="0.08" />
+            <rect x="140" y="135" width="80" height="48" fill="#FFFAEF" stroke="#1A1A1A" stroke-width="1.2" />
+            <!-- handwritten text -->
+            <text x="180" y="158" font-family="Caveat, cursive" font-size="14" font-weight="600" fill="#8B3A3A" text-anchor="middle">скоро</text>
+            <text x="180" y="174" font-family="Caveat, cursive" font-size="14" font-weight="600" fill="#8B3A3A" text-anchor="middle">вернёмся</text>
+            <!-- thumbtack -->
+            <circle cx="180" cy="135" r="2.5" fill="#1A1A1A" />
+          </g>
+
+          <!-- cat sleeping by the door -->
+          <g transform="translate(255, 215)">
+            <ellipse cx="0" cy="10" rx="22" ry="6" fill="#1A1A1A" opacity="0.15" />
+            <!-- body curled up -->
+            <ellipse cx="0" cy="2" rx="20" ry="10" fill="#A4453A" />
+            <!-- head -->
+            <circle cx="-14" cy="-2" r="8" fill="#A4453A" />
+            <!-- ears -->
+            <path d="M -19 -8 L -16 -2 L -22 -4 Z" fill="#8B3A3A" />
+            <path d="M -10 -8 L -8 -2 L -13 -4 Z" fill="#8B3A3A" />
+            <!-- eye (closed, content) -->
+            <path d="M -16 -4 Q -14 -2 -12 -4" stroke="#1A1A1A" stroke-width="1" fill="none" />
+            <!-- tail curled -->
+            <path d="M 18 0 Q 24 -2 22 4" fill="none" stroke="#A4453A" stroke-width="4" stroke-linecap="round" />
+            <!-- 'zzz' (sleep) -->
+            <text x="0" y="-12" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="10" fill="#8A8078" class="anim-flicker">z</text>
+            <text x="6" y="-18" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="8" fill="#8A8078" class="anim-flicker" style="animation-delay: 0.5s">z</text>
+            <text x="12" y="-23" font-family="Playfair Display, Georgia, serif" font-style="italic" font-size="7" fill="#8A8078" class="anim-flicker" style="animation-delay: 1s">z</text>
+          </g>
+
+          <!-- lamp above (glowing) -->
+          <g transform="translate(180, 50)">
+            <line x1="0" y1="-10" x2="0" y2="0" stroke="#1A1A1A" stroke-width="0.8" />
+            <ellipse cx="0" cy="4" rx="8" ry="6" fill="#C9A84C" class="anim-flicker" />
+            <ellipse cx="0" cy="4" rx="4" ry="3" fill="#FFFAEF" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Russian -->
+      <div data-lang="ru">
+        <div class="error-num">503</div>
+        <h1 class="error-quip">Закрыты <em>на технический перерыв</em></h1>
+        <p class="error-desc">Обновляем сайт — добавляем новые туры и фото. Будем через пару минут. Чайник уже на огне, кот на месте.</p>
+        <div class="error-actions">
+          <a href="javascript:location.reload()" class="btn btn-fill">Обновить</a>
+          <a href="tel:+998712000000" class="btn btn-outline">Позвонить</a>
+        </div>
+        <p class="error-meta">Срочный вопрос? <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a> работает без перерыва</p>
+      </div>
+
+      <!-- Uzbek -->
+      <div data-lang="uz">
+        <div class="error-num">503</div>
+        <h1 class="error-quip">Texnik <em>tanaffusda</em>miz</h1>
+        <p class="error-desc">Saytni yangilamoqdamiz — yangi sayohatlar va fotosuratlar qo'shyapmiz. Bir necha daqiqadan keyin qaytamiz. Choynak allaqachon olovda, mushuk joyida.</p>
+        <div class="error-actions">
+          <a href="javascript:location.reload()" class="btn btn-fill">Yangilash</a>
+          <a href="tel:+998712000000" class="btn btn-outline">Qo'ng'iroq qilish</a>
+        </div>
+        <p class="error-meta">Shoshilinch savol? <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a> tanaffussiz ishlaydi</p>
+      </div>
+
+      <!-- English -->
+      <div data-lang="en">
+        <div class="error-num">503</div>
+        <h1 class="error-quip">On a <em>short break</em></h1>
+        <p class="error-desc">We're updating the site — adding new tours and photos. We'll be back in a few minutes. Kettle's on, cat's in position.</p>
+        <div class="error-actions">
+          <a href="javascript:location.reload()" class="btn btn-fill">Reload</a>
+          <a href="tel:+998712000000" class="btn btn-outline">Call us</a>
+        </div>
+        <p class="error-meta">Urgent? Our <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a> never closes</p>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://mavrannahr.uz/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://mavrannahr.uz/?lang=uz"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mavrannahr.uz/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mavrannahr.uz/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mavrannahr.uz/"/>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/about.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://mavrannahr.uz/about.html?lang=uz"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mavrannahr.uz/about.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mavrannahr.uz/about.html?lang=en"/>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/services.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://mavrannahr.uz/services.html?lang=uz"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mavrannahr.uz/services.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mavrannahr.uz/services.html?lang=en"/>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/tours.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://mavrannahr.uz/tours.html?lang=uz"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mavrannahr.uz/tours.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mavrannahr.uz/tours.html?lang=en"/>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/contact.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://mavrannahr.uz/contact.html?lang=uz"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mavrannahr.uz/contact.html?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mavrannahr.uz/contact.html?lang=en"/>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/offer.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://mavrannahr.uz/terms.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

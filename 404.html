@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8B3A3A" />
+
+  <title data-i18n="page.404.title">404 — Sahifa topilmadi · Mavrannahr Tour</title>
+  <meta name="description" content="Bu manzilda sahifa yo'q. Bosh sahifaga qaytib davom eting." data-i18n="page.404.desc" />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/partials.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="error-body">
+
+  <a class="skip-to-content" href="#main" data-i18n="nav.skip">Asosiy mazmunga o'tish</a>
+
+  <div data-include="partials/navbar.html"></div>
+
+  <main id="main" class="error-page">
+
+    <!-- decorative stars -->
+    <span class="error-star" style="top: 18%; left: 12%; animation-delay: 0s;"></span>
+    <span class="error-star" style="top: 25%; left: 88%; animation-delay: 0.6s;"></span>
+    <span class="error-star" style="top: 60%; left: 8%; animation-delay: 1.2s;"></span>
+    <span class="error-star" style="top: 75%; left: 92%; animation-delay: 1.8s;"></span>
+    <span class="error-star" style="top: 35%; left: 78%; animation-delay: 2.4s;"></span>
+    <span class="error-star" style="top: 82%; left: 22%; animation-delay: 0.3s;"></span>
+
+    <div class="error-content">
+
+      <!-- ── SVG: Spinning compass over cracked map ── -->
+      <div class="error-illustration" aria-hidden="true">
+        <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- shadow -->
+          <ellipse cx="180" cy="230" rx="110" ry="10" class="illu-ground" />
+
+          <!-- old map under compass -->
+          <g transform="translate(70, 130)">
+            <path d="M 0 60 L 12 50 L 38 56 L 60 48 L 90 52 L 130 46 L 170 52 L 200 48 L 220 56 L 220 90 L 0 90 Z"
+                  fill="#F0E8D6" stroke="#C9B98F" stroke-width="1" />
+            <!-- map paths -->
+            <path d="M 20 70 Q 60 65 100 72 T 180 70" fill="none" stroke="#A4453A" stroke-width="1" stroke-dasharray="3 2" opacity="0.5" />
+            <path d="M 30 80 L 50 78 L 80 82 L 120 78 L 160 84 L 200 80" fill="none" stroke="#A4453A" stroke-width="0.8" opacity="0.4" />
+            <!-- city dots -->
+            <circle cx="40" cy="74" r="2" fill="#A4453A" />
+            <circle cx="95" cy="71" r="2" fill="#A4453A" />
+            <circle cx="155" cy="74" r="2" fill="#A4453A" />
+            <circle cx="200" cy="78" r="2" fill="#A4453A" />
+            <!-- city labels (tiny) -->
+            <text x="40" y="68" font-family="Georgia, serif" font-size="6" fill="#8A6B40" text-anchor="middle">Samarqand</text>
+            <text x="95" y="65" font-family="Georgia, serif" font-size="6" fill="#8A6B40" text-anchor="middle">Buxoro</text>
+            <text x="155" y="68" font-family="Georgia, serif" font-size="6" fill="#8A6B40" text-anchor="middle">Xiva</text>
+            <text x="200" y="72" font-family="Georgia, serif" font-size="6" fill="#8A6B40" text-anchor="middle">Toshkent</text>
+            <!-- torn edge effect -->
+            <path d="M 0 60 L 12 50 L 38 56 L 60 48 L 90 52 L 130 46 L 170 52 L 200 48 L 220 56" fill="none" stroke="#C9B98F" stroke-width="1.5" />
+          </g>
+
+          <!-- compass body -->
+          <g transform="translate(180, 110)">
+            <!-- outer ring -->
+            <circle cx="0" cy="0" r="60" fill="#FFFAEF" stroke="#8B3A3A" stroke-width="3" />
+            <circle cx="0" cy="0" r="60" fill="none" stroke="#8B3A3A" stroke-width="0.5" opacity="0.4" />
+            <circle cx="0" cy="0" r="52" fill="none" stroke="#8B3A3A" stroke-width="0.6" />
+
+            <!-- cardinal points -->
+            <text x="0" y="-38" font-family="Playfair Display, Georgia, serif" font-size="12" font-weight="700" fill="#1A1A1A" text-anchor="middle">N</text>
+            <text x="38" y="4" font-family="Playfair Display, Georgia, serif" font-size="11" font-weight="700" fill="#8A8078" text-anchor="middle">E</text>
+            <text x="0" y="46" font-family="Playfair Display, Georgia, serif" font-size="11" font-weight="700" fill="#8A8078" text-anchor="middle">S</text>
+            <text x="-38" y="4" font-family="Playfair Display, Georgia, serif" font-size="11" font-weight="700" fill="#8A8078" text-anchor="middle">W</text>
+
+            <!-- tick marks -->
+            <g stroke="#8B3A3A" stroke-width="1" opacity="0.5">
+              <line x1="0" y1="-50" x2="0" y2="-46" />
+              <line x1="50" y1="0" x2="46" y2="0" />
+              <line x1="0" y1="50" x2="0" y2="46" />
+              <line x1="-50" y1="0" x2="-46" y2="0" />
+              <line x1="35" y1="-35" x2="32" y2="-32" />
+              <line x1="35" y1="35" x2="32" y2="32" />
+              <line x1="-35" y1="35" x2="-32" y2="32" />
+              <line x1="-35" y1="-35" x2="-32" y2="-32" />
+            </g>
+
+            <!-- spinning needle -->
+            <g class="digit-spin">
+              <path d="M 0 -42 L 6 0 L 0 6 L -6 0 Z" fill="#8B3A3A" />
+              <path d="M 0 42 L 6 0 L 0 -6 L -6 0 Z" fill="#8A8078" />
+              <circle cx="0" cy="0" r="5" fill="#1A1A1A" />
+              <circle cx="0" cy="0" r="2" fill="#FFFAEF" />
+            </g>
+          </g>
+
+          <!-- question marks around -->
+          <text x="58" y="50" font-family="Playfair Display, Georgia, serif" font-size="24" fill="#8B3A3A" opacity="0.4" class="anim-flicker">?</text>
+          <text x="290" y="68" font-family="Playfair Display, Georgia, serif" font-size="18" fill="#8B3A3A" opacity="0.4" class="anim-flicker" style="animation-delay: 0.8s">?</text>
+          <text x="320" y="160" font-family="Playfair Display, Georgia, serif" font-size="22" fill="#8B3A3A" opacity="0.3" class="anim-flicker" style="animation-delay: 1.6s">?</text>
+        </svg>
+      </div>
+
+      <!-- Russian -->
+      <div data-lang="ru">
+        <div class="error-num"><span class="digit">4</span><span class="digit digit-spin">0</span><span class="digit">4</span></div>
+        <h1 class="error-quip">Компас потерялся <em>в пути</em></h1>
+        <p class="error-desc">Эта страница не нашлась на карте Шёлкового пути. Возможно, ссылка устарела или адрес введён с опечаткой. Давайте вернёмся на знакомую тропу.</p>
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-fill">На главную</a>
+          <a href="contact.html" class="btn btn-outline">Связаться</a>
+        </div>
+        <p class="error-meta">Или напишите нам в <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a> — поможем сориентироваться</p>
+      </div>
+
+      <!-- Uzbek -->
+      <div data-lang="uz">
+        <div class="error-num"><span class="digit">4</span><span class="digit digit-spin">0</span><span class="digit">4</span></div>
+        <h1 class="error-quip">Kompas <em>yo'lda</em> adashdi</h1>
+        <p class="error-desc">Bu sahifa Ipak yo'li xaritasida topilmadi. Ehtimol, havola eskirgan yoki manzil noto'g'ri kiritilgan. Keling, tanish so'qmoqqa qaytaylik.</p>
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-fill">Bosh sahifaga</a>
+          <a href="contact.html" class="btn btn-outline">Bog'lanish</a>
+        </div>
+        <p class="error-meta">Yoki <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a>da yozing — yo'l topishga yordam beramiz</p>
+      </div>
+
+      <!-- English -->
+      <div data-lang="en">
+        <div class="error-num"><span class="digit">4</span><span class="digit digit-spin">0</span><span class="digit">4</span></div>
+        <h1 class="error-quip">The compass <em>got lost</em></h1>
+        <p class="error-desc">This page isn't on the Silk Road map. The link may be outdated or the address mistyped. Let's get back on a familiar trail.</p>
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-fill">Back to home</a>
+          <a href="contact.html" class="btn btn-outline">Contact us</a>
+        </div>
+        <p class="error-meta">Or message us on <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a> — we'll help you find your way</p>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

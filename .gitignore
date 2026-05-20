@@ -1,0 +1,36 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local development
+.cache/
+node_modules/
+*.log
+
+# Local server temp
+.python-server.log
+
+# Backup files
+*.bak
+*.tmp
+~$*
+
+# Environment / secrets (when added later)
+.env
+.env.local
+.env.*.local
+
+# OPTIONAL: skip old design demos if you don't want them in repo
+# Comment these out if you want to keep design v1-v4 as references
+# design_v1_royal.html
+# design_v2_minimal.html
+# design_v3_silkroad.html
+# design_v4_bold.html

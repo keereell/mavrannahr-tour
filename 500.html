@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8B3A3A" />
+
+  <title>500 — Server xatosi · Mavrannahr Tour</title>
+  <meta name="description" content="Texnik nosozlik. Tez orada tuzatamiz." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/partials.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="error-body">
+
+  <a class="skip-to-content" href="#main" data-i18n="nav.skip">Asosiy mazmunga o'tish</a>
+
+  <div data-include="partials/navbar.html"></div>
+
+  <main id="main" class="error-page">
+
+    <!-- decorative stars -->
+    <span class="error-star" style="top: 14%; left: 18%; animation-delay: 0s;"></span>
+    <span class="error-star" style="top: 22%; left: 80%; animation-delay: 0.7s;"></span>
+    <span class="error-star" style="top: 58%; left: 6%; animation-delay: 1.4s;"></span>
+    <span class="error-star" style="top: 70%; left: 88%; animation-delay: 0.4s;"></span>
+
+    <div class="error-content">
+
+      <!-- ── SVG: Tent in a storm with lightning ── -->
+      <div class="error-illustration" aria-hidden="true">
+        <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- ground -->
+          <ellipse cx="180" cy="240" rx="150" ry="8" class="illu-ground" />
+
+          <!-- lightning bolt (animated flicker) -->
+          <g class="anim-flicker" style="animation-duration: 1.5s">
+            <path d="M 105 30 L 130 90 L 110 90 L 135 150 L 105 80 L 125 80 Z"
+                  fill="#C9A84C" stroke="#8B3A3A" stroke-width="1.5" stroke-linejoin="round" />
+          </g>
+
+          <!-- wind lines (right side) -->
+          <g stroke="#8B3A3A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4">
+            <path d="M 240 70 Q 260 68 280 72" />
+            <path d="M 250 90 Q 280 86 310 92" />
+            <path d="M 245 110 Q 270 106 300 112" />
+            <path d="M 260 135 Q 290 130 320 138" />
+          </g>
+
+          <!-- tent (swaying) -->
+          <g class="anim-sway" style="animation-duration: 3s; transform-origin: 180px 210px">
+            <!-- tent shadow back -->
+            <path d="M 130 210 L 180 110 L 230 210 Z" fill="#1A1A1A" opacity="0.15" />
+            <!-- tent body -->
+            <path d="M 125 210 L 180 105 L 235 210 Z" fill="#FFFAEF" stroke="#8B3A3A" stroke-width="2.5" stroke-linejoin="round" />
+            <!-- tent door (dark interior) -->
+            <path d="M 165 210 L 180 145 L 195 210 Z" fill="#2A2A28" />
+            <!-- glowing light inside -->
+            <ellipse cx="180" cy="200" rx="8" ry="4" fill="#C9A84C" opacity="0.7" class="anim-flicker" />
+            <!-- tent pole top -->
+            <circle cx="180" cy="103" r="3" fill="#8B3A3A" />
+            <!-- decorative line on tent -->
+            <path d="M 145 195 L 215 195" stroke="#8B3A3A" stroke-width="1" opacity="0.4" />
+            <path d="M 155 170 L 205 170" stroke="#8B3A3A" stroke-width="1" opacity="0.4" />
+            <!-- ropes / guy lines -->
+            <line x1="125" y1="210" x2="100" y2="225" stroke="#8B3A3A" stroke-width="1" />
+            <line x1="235" y1="210" x2="260" y2="225" stroke="#8B3A3A" stroke-width="1" />
+          </g>
+
+          <!-- coffee pot near tent (small detail) -->
+          <g transform="translate(80, 215)">
+            <ellipse cx="0" cy="8" rx="14" ry="4" fill="#1A1A1A" opacity="0.2" />
+            <path d="M -10 0 L -10 8 Q -10 12 -6 12 L 6 12 Q 10 12 10 8 L 10 0 Z" fill="#8B3A3A" />
+            <ellipse cx="0" cy="0" rx="10" ry="3" fill="#6E2D2D" />
+            <line x1="0" y1="-10" x2="0" y2="-3" stroke="#1A1A1A" stroke-width="1.5" />
+            <!-- steam -->
+            <g class="anim-flicker">
+              <path d="M -3 -10 Q -5 -16 -2 -22" fill="none" stroke="#8A8078" stroke-width="1.2" opacity="0.7" />
+              <path d="M 3 -10 Q 5 -18 1 -24" fill="none" stroke="#8A8078" stroke-width="1.2" opacity="0.5" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Russian -->
+      <div data-lang="ru">
+        <div class="error-num">500</div>
+        <h1 class="error-quip">У нас <em>технический шторм</em></h1>
+        <p class="error-desc">Что-то сломалось на нашей стороне. Системный администратор уже пьёт пятый чай и чинит. Попробуйте через минуту — должны управиться.</p>
+        <div class="error-actions">
+          <a href="javascript:location.reload()" class="btn btn-fill">Попробовать снова</a>
+          <a href="index.html" class="btn btn-outline">На главную</a>
+        </div>
+        <p class="error-meta">Если проблема не уходит — напишите в <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a>, починим вручную</p>
+      </div>
+
+      <!-- Uzbek -->
+      <div data-lang="uz">
+        <div class="error-num">500</div>
+        <h1 class="error-quip">Bizda <em>texnik bo'ron</em></h1>
+        <p class="error-desc">Bizning tarafda nimadir buzildi. Tizim administratori beshinchi choyni ichmoqda va tuzatmoqda. Bir daqiqadan keyin qayta urinib ko'ring — boshini chiqarib olamiz.</p>
+        <div class="error-actions">
+          <a href="javascript:location.reload()" class="btn btn-fill">Qayta urinish</a>
+          <a href="index.html" class="btn btn-outline">Bosh sahifaga</a>
+        </div>
+        <p class="error-meta">Agar muammo davom etsa — <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a>da yozing, qo'lda tuzatamiz</p>
+      </div>
+
+      <!-- English -->
+      <div data-lang="en">
+        <div class="error-num">500</div>
+        <h1 class="error-quip">A <em>technical storm</em> on our side</h1>
+        <p class="error-desc">Something broke at our end. Our sysadmin is on their fifth cup of tea and fixing it. Try again in a minute — we'll have it sorted shortly.</p>
+        <div class="error-actions">
+          <a href="javascript:location.reload()" class="btn btn-fill">Try again</a>
+          <a href="index.html" class="btn btn-outline">Back home</a>
+        </div>
+        <p class="error-meta">If the problem persists — message us on <a href="https://t.me/mavrannahr_tour" target="_blank" rel="noopener">Telegram</a> and we'll fix it by hand</p>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
