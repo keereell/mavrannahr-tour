@@ -54,57 +54,6 @@
   <link rel="preload" as="image" href="assets/images/photo-1744873331959-f9afb81ec7de.jpg" />
 
   <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Mavrannahr Tour",
-    "url": "https://mavrannahr.uz/",
-    "logo": "https://mavrannahr.uz/assets/logo.svg",
-    "image": "https://keereell.github.io/mavrannahr-tour/assets/images/photo-1744873331959-f9afb81ec7de.jpg",
-    "description": "Licensed tour operator based in Tashkent, Uzbekistan. Inbound, outbound, domestic and MICE tourism since 2012.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Amir Temur 15",
-      "addressLocality": "Tashkent",
-      "addressRegion": "Yunusabad district",
-      "postalCode": "100000",
-      "addressCountry": "UZ"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "41.327",
-      "longitude": "69.282"
-    },
-    "telephone": "+998712000000",
-    "email": "info@mavrannahr.uz",
-    "founder": {
-      "@type": "Person",
-      "name": "Sherzod Karimov",
-      "jobTitle": "Director"
-    },
-    "foundingDate": "2012-03-14",
-    "priceRange": "$$",
-    "areaServed": ["UZ", "TR", "AE", "GE", "RU"],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "10:00",
-        "closes": "15:00"
-      }
-    ],
-    "sameAs": [
-      "https://t.me/mavrannahr_tour"
-    ]
-  }
-  </script>
 
   <!-- Analytics placeholder (uncomment when ID is available) -->
   <!--
@@ -118,6 +67,87 @@
   <script src="js/main.js" defer></script>
   <script src="js/scroll.js" defer></script>
   <script src="js/cookies.js" defer></script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Mavrannahr Tour",
+  "inLanguage": [
+    "uz",
+    "ru",
+    "en"
+  ],
+  "url": "https://mavrannahr.uz/",
+  "logo": "https://mavrannahr.uz/assets/logo.svg",
+  "image": "https://keereell.github.io/mavrannahr-tour/assets/images/photo-1744873331959-f9afb81ec7de.jpg",
+  "description": [
+    {
+      "@language": "uz",
+      "@value": "Toshkentdagi litsenziyalangan tour operator. 2012-yildan kiruvchi, chiquvchi, ichki turizm va MICE tadbirlari."
+    },
+    {
+      "@language": "ru",
+      "@value": "Лицензированный туроператор в Ташкенте. С 2012 года — въездной, выездной, внутренний туризм и MICE."
+    },
+    {
+      "@language": "en",
+      "@value": "Licensed tour operator based in Tashkent, Uzbekistan. Since 2012 — inbound, outbound, domestic and MICE tourism."
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Amir Temur 15",
+    "addressLocality": "Tashkent",
+    "addressRegion": "Yunusabad district",
+    "postalCode": "100000",
+    "addressCountry": "UZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "41.327",
+    "longitude": "69.282"
+  },
+  "telephone": "+998712000000",
+  "email": "info@mavrannahr.uz",
+  "founder": {
+    "@type": "Person",
+    "name": "Sherzod Karimov",
+    "jobTitle": "Director"
+  },
+  "foundingDate": "2012-03-14",
+  "priceRange": "$$",
+  "areaServed": [
+    "UZ",
+    "TR",
+    "AE",
+    "GE",
+    "RU"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "15:00"
+    }
+  ],
+  "sameAs": [
+    "https://t.me/mavrannahr_tour"
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -227,7 +257,7 @@
 
           <article class="tour-card" data-animate>
             <div class="tour-img">
-              <img src="assets/images/photo-1715540335640-d9e2c7e60aaf.jpg" loading="lazy" width="600" height="400" alt="Samarqand" />
+              <picture><source srcset="assets/images/photo-1715540335640-d9e2c7e60aaf.webp" type="image/webp"><img src="assets/images/photo-1715540335640-d9e2c7e60aaf.jpg" loading="lazy" width="600" height="400" alt="Samarqand" /></picture>
               <span class="tour-chip" data-i18n="cat.inbound">Kiruvchi</span>
               <span class="tour-discount">−25%</span>
             </div>
@@ -249,7 +279,7 @@
 
           <article class="tour-card" data-animate>
             <div class="tour-img">
-              <img src="assets/images/photo-1512453979798-5ea266f8880c.jpg" loading="lazy" width="600" height="400" alt="Dubay" />
+              <picture><source srcset="assets/images/photo-1512453979798-5ea266f8880c.webp" type="image/webp"><img src="assets/images/photo-1512453979798-5ea266f8880c.jpg" loading="lazy" width="600" height="400" alt="Dubay" /></picture>
               <span class="tour-chip" data-i18n="cat.outbound">Chiquvchi</span>
               <span class="tour-discount">−20%</span>
             </div>
@@ -340,13 +370,11 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-img" data-animate>
-            <img
-              src="assets/images/photo-1662468783857-4d29858fbf5d.jpg"
+            <picture><source srcset="assets/images/photo-1662468783857-4d29858fbf5d.webp" type="image/webp"><img src="assets/images/photo-1662468783857-4d29858fbf5d.jpg"
               loading="lazy"
               width="900" height="1125"
               alt="Buxorodagi Po'i-Kalon ansambli"
-              data-i18n-attr="alt:about.image.alt"
-            />
+              data-i18n-attr="alt:about.image.alt" /></picture>
             <div class="about-img-accent" aria-hidden="true"></div>
           </div>
           <div data-animate>
@@ -389,28 +417,28 @@
         </div>
         <div class="destinations-grid" style="margin-top: 48px;">
           <div class="dest-card dest-big" data-animate>
-            <img src="assets/images/photo-1715540335640-d9e2c7e60aaf.jpg" loading="lazy" width="900" height="600" alt="Samarqand" />
+            <picture><source srcset="assets/images/photo-1715540335640-d9e2c7e60aaf.webp" type="image/webp"><img src="assets/images/photo-1715540335640-d9e2c7e60aaf.jpg" loading="lazy" width="900" height="600" alt="Samarqand" /></picture>
             <div class="dest-card-label">
               <h3 data-i18n="dest.samarkand.name">Samarqand</h3>
               <p data-i18n="dest.samarkand.meta">Registon, Shohi Zinda, Bibi-Xonim</p>
             </div>
           </div>
           <div class="dest-card" data-animate>
-            <img src="assets/images/photo-1662468752704-f256cf5c6784.jpg" loading="lazy" width="600" height="600" alt="Buxoro" />
+            <picture><source srcset="assets/images/photo-1662468752704-f256cf5c6784.webp" type="image/webp"><img src="assets/images/photo-1662468752704-f256cf5c6784.jpg" loading="lazy" width="600" height="600" alt="Buxoro" /></picture>
             <div class="dest-card-label">
               <h3 data-i18n="dest.bukhara.name">Buxoro</h3>
               <p data-i18n="dest.bukhara.meta">Po'i-Kalon, Ark, Lyabi-Hovuz</p>
             </div>
           </div>
           <div class="dest-card" data-animate>
-            <img src="assets/images/photo-1756914374243-b645fe72e100.jpg" loading="lazy" width="600" height="600" alt="Xiva" />
+            <picture><source srcset="assets/images/photo-1756914374243-b645fe72e100.webp" type="image/webp"><img src="assets/images/photo-1756914374243-b645fe72e100.jpg" loading="lazy" width="600" height="600" alt="Xiva" /></picture>
             <div class="dest-card-label">
               <h3 data-i18n="dest.khiva.name">Xiva</h3>
               <p data-i18n="dest.khiva.meta">Ichan-Qala, Kalta-Minor</p>
             </div>
           </div>
           <div class="dest-card" data-animate>
-            <img src="assets/images/photo-1654861857728-bb10452b5a5f.jpg" loading="lazy" width="600" height="600" alt="Toshkent" />
+            <picture><source srcset="assets/images/photo-1654861857728-bb10452b5a5f.webp" type="image/webp"><img src="assets/images/photo-1654861857728-bb10452b5a5f.jpg" loading="lazy" width="600" height="600" alt="Toshkent" /></picture>
             <div class="dest-card-label">
               <h3 data-i18n="dest.tashkent.name">Toshkent</h3>
               <p data-i18n="dest.tashkent.meta">Eski shahar, Chorsu</p>
@@ -462,7 +490,7 @@
 
           <article class="tour-card" data-animate>
             <div class="tour-img">
-              <img src="assets/images/photo-1662468783857-4d29858fbf5d.jpg" loading="lazy" width="600" height="400" alt="Buxoro" />
+              <picture><source srcset="assets/images/photo-1662468783857-4d29858fbf5d.webp" type="image/webp"><img src="assets/images/photo-1662468783857-4d29858fbf5d.jpg" loading="lazy" width="600" height="400" alt="Buxoro" /></picture>
               <span class="tour-chip" data-i18n="cat.inbound">Kiruvchi</span>
             </div>
             <div class="tour-body">
@@ -481,7 +509,7 @@
 
           <article class="tour-card" data-animate>
             <div class="tour-img">
-              <img src="assets/images/photo-1671048116663-eda1518a169b.jpg" loading="lazy" width="600" height="400" alt="Palov" />
+              <picture><source srcset="assets/images/photo-1671048116663-eda1518a169b.webp" type="image/webp"><img src="assets/images/photo-1671048116663-eda1518a169b.jpg" loading="lazy" width="600" height="400" alt="Palov" /></picture>
               <span class="tour-chip" data-i18n="cat.inbound">Kiruvchi</span>
             </div>
             <div class="tour-body">
@@ -519,7 +547,7 @@
 
           <article class="tour-card" data-animate>
             <div class="tour-img">
-              <img src="assets/images/photo-1512453979798-5ea266f8880c.jpg" loading="lazy" width="600" height="400" alt="Dubay" />
+              <picture><source srcset="assets/images/photo-1512453979798-5ea266f8880c.webp" type="image/webp"><img src="assets/images/photo-1512453979798-5ea266f8880c.jpg" loading="lazy" width="600" height="400" alt="Dubay" /></picture>
               <span class="tour-chip" data-i18n="cat.outbound">Chiquvchi</span>
             </div>
             <div class="tour-body">
@@ -538,7 +566,7 @@
 
           <article class="tour-card" data-animate>
             <div class="tour-img">
-              <img src="assets/images/photo-1594629609174-00db53036357.jpg" loading="lazy" width="600" height="400" alt="Chimg'on" />
+              <picture><source srcset="assets/images/photo-1594629609174-00db53036357.webp" type="image/webp"><img src="assets/images/photo-1594629609174-00db53036357.jpg" loading="lazy" width="600" height="400" alt="Chimg'on" /></picture>
               <span class="tour-chip" data-i18n="cat.domestic">Ichki</span>
             </div>
             <div class="tour-body">
