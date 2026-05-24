@@ -1,4 +1,4 @@
-# Деплой сайта Mavrannahr Tour онлайн
+# Деплой сайта FENIX MULTIGLOBAL онлайн
 
 Сайт статический — поэтому работает на любом бесплатном хостинге. Ниже **3 варианта** от самого простого до самого фичастого. Можешь использовать **любой один**.
 
@@ -29,7 +29,7 @@ git config --global user.email "твой@email.com"
 ```bash
 # git init уже выполнен — папка .git создана
 git add .
-git commit -m "Initial commit: Mavrannahr Tour website"
+git commit -m "Initial commit: FENIX MULTIGLOBAL website"
 git branch -M main
 ```
 
@@ -116,10 +116,10 @@ URL вида: `https://mavrannahr-tour.pages.dev`
 
 ---
 
-## 🌐 Свой домен (когда будет готов `mavrannahr.uz`)
+## 🌐 Свой домен (когда будет готов `agentaero.uz`)
 
 На любом из 3-х вариантов можно подключить свой домен:
-- **GitHub Pages:** Settings → Pages → Custom domain → введи `mavrannahr.uz`, добавь DNS-запись CNAME у регистратора
+- **GitHub Pages:** Settings → Pages → Custom domain → введи `agentaero.uz`, добавь DNS-запись CNAME у регистратора
 - **Netlify:** Domain settings → Add custom domain
 - **Cloudflare Pages:** Custom domains → Set up a custom domain
 

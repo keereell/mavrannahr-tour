@@ -1,5 +1,5 @@
 /* ============================================
-   Mavrannahr Tour — cookies.js
+   FENIX MULTIGLOBAL — cookies.js
    Cookie consent banner with localStorage memory
    ============================================ */
 
