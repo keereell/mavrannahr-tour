@@ -1,5 +1,5 @@
 /* ============================================
-   Mavrannahr Tour — tours.js
+   FENIX MULTIGLOBAL — tours.js
    Two-dimensional filter: category × theme
    ============================================ */
 

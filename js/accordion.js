@@ -1,5 +1,5 @@
 /* ============================================
-   Mavrannahr Tour — accordion.js
+   FENIX MULTIGLOBAL — accordion.js
    FAQ accordion with keyboard navigation + ARIA
    ============================================ */
 

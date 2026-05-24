@@ -1,5 +1,5 @@
 /* ============================================
-   Mavrannahr Tour — scroll.js
+   FENIX MULTIGLOBAL — scroll.js
    Intersection Observer animations
    Respects prefers-reduced-motion
    ============================================ */

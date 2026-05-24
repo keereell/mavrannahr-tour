@@ -1,5 +1,5 @@
 /* ============================================
-   Mavrannahr Tour — partials.js
+   FENIX MULTIGLOBAL — partials.js
    Fetch и inject navbar/footer
    ============================================ */
 
