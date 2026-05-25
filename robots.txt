@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /partials/
 
-Sitemap: https://agentaero.uz/sitemap.xml
+Sitemap: https://fenixtour.uz/sitemap.xml

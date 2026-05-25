@@ -4,7 +4,8 @@
 
 Этот файл объясняет:
 - [Как обновлять live-сайт](#-как-обновить-уже-развёрнутый-сайт) ← начни отсюда, если просто надо что-то поменять
-- [Как переехать на свой домен](#-переезд-на-свой-домен-agentaerouz) — когда подключите `agentaero.uz`
+- [Подключение домена `fenixtour.uz`](#-подключение-домена-fenixtouruz) — DNS, GitHub Settings, поисковики
+- [Email на новом домене](#-email-на-новом-домене-опционально)
 - [Альтернативные хостинги](#-альтернативные-хостинги) — Netlify / Cloudflare / shared hosting
 - [Что делать если что-то сломалось](#-если-что-то-сломалось)
 
@@ -41,17 +42,13 @@ git push
 
 ---
 
-## 🌐 Переезд на свой домен (`agentaero.uz`)
+## 🌐 Подключение домена `fenixtour.uz`
 
-Когда компания подключит домен, нужно сделать **2 вещи**: настроить DNS и обновить SEO-ссылки в коде.
+Домен **куплен**. Все SEO-ссылки в коде уже указывают на `https://fenixtour.uz/`, файл `CNAME` создан. Осталось 2 шага: настроить DNS у регистратора и активировать домен в GitHub.
 
-### Шаг 1. Купить / подключить домен
+### Шаг 1. Настроить DNS у регистратора
 
-`agentaero.uz` нужно зарегистрировать у любого `.uz`-регистратора (например, `tas-ix.uz`, `cctld.uz`, `uzinfocom.uz`). Это разовая платная процедура.
-
-### Шаг 2. Настроить DNS у регистратора
-
-В панели управления доменом добавить **4 A-записи** на IP-адреса GitHub Pages:
+Зайди в панель управления доменом (там, где `fenixtour.uz` куплен) и добавь следующие записи:
 
 | Тип | Имя | Значение |
 |-----|-----|----------|
@@ -61,40 +58,46 @@ git push
 | A | `@` | `185.199.111.153` |
 | CNAME | `www` | `keereell.github.io` |
 
-(IP-адреса актуальны на 2026 год, свежий список всегда в [документации GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).)
+Эти 4 A-записи направляют **корневой домен** (`fenixtour.uz`) на серверы GitHub Pages.
+CNAME `www` делает так, чтобы `www.fenixtour.uz` тоже работал.
 
-DNS-изменения применяются от 5 минут до 24 часов.
+IP-адреса актуальны на 2026 год, свежий список всегда в [документации GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain).
 
-### Шаг 3. Привязать домен в GitHub
+DNS-изменения применяются от 5 минут до 24 часов. Проверить можно так:
+```bash
+nslookup fenixtour.uz
+# должны увидеть один из IP 185.199.108-111.153
+```
+
+### Шаг 2. Активировать домен в GitHub
 
 1. Зайди на https://github.com/keereell/mavrannahr-tour/settings/pages
-2. В разделе **Custom domain** введи `agentaero.uz` → Save
-3. Подожди пока GitHub проверит DNS (зелёная галка)
-4. Поставь галку **Enforce HTTPS** (станет доступна через 5–30 минут после проверки)
+2. В разделе **Custom domain** введи `fenixtour.uz` → **Save**
+   (поле, скорее всего, уже заполнено автоматически из файла `CNAME`)
+3. Подожди пока GitHub проверит DNS — появится **DNS check successful** ✅
+4. **Поставь галку «Enforce HTTPS»** — станет доступна через 5–30 минут после проверки DNS
 
-GitHub автоматически создаст файл `CNAME` в репозитории — не удаляй его.
+После этого сайт доступен по адресу **https://fenixtour.uz/** с бесплатным HTTPS-сертификатом (Let's Encrypt, обновляется автоматически).
 
-### Шаг 4. Обновить SEO-ссылки в коде
+### Шаг 3. Сказать поисковикам про новый домен
 
-Сейчас в коде везде стоит `https://agentaero.uz/` как canonical / og:url / sitemap — это сделано заранее. **Если домен будет другой**, нужно сделать find-and-replace по всему проекту.
+После того как `https://fenixtour.uz/` заработает:
 
-Файлы, в которых упоминается домен (115 мест в 12 файлах):
-- Все `*.html` — `<link rel="canonical">`, `<meta property="og:url">`, `<link rel="alternate" hreflang>`, JSON-LD `url` / `image` / `logo`
-- `sitemap.xml` — `<loc>` тегов
-- `robots.txt` — `Sitemap:` URL
-- `partials/navbar.html` и `partials/footer.html` — если есть абсолютные ссылки
+1. **[Google Search Console](https://search.google.com/search-console)** — добавь property `fenixtour.uz`, подтверди владение, отправь `sitemap.xml` (URL: `https://fenixtour.uz/sitemap.xml`)
+2. **[Yandex Webmaster](https://webmaster.yandex.ru/)** — то же самое (важно для рынка РУз/СНГ)
+3. **[Yandex Business](https://yandex.uz/sprav/)** — добавь карточку организации с адресом, часами, телефоном (синхронизируется с реквизитами на `/contact.html`)
+4. **[Google Business Profile](https://business.google.com/)** — особенно важно для тур-агентства, попадёшь в Google Maps и локальный поиск
 
-**Если оставляете `agentaero.uz`** — ничего менять не надо, всё уже настроено.
+---
 
-**Если меняете на другой домен** — попроси меня сделать массовую замену одной командой.
+## ✉️ Email на новом домене (опционально)
 
-### Шаг 5. Сказать поисковикам
+Сейчас в коде везде используется `info@agentaero.uz` (этот email вы дали изначально). Если хотите, чтобы email тоже был на новом домене (`info@fenixtour.uz`) — нужно:
 
-После переезда:
-1. Добавить сайт в [Google Search Console](https://search.google.com/search-console) — подтвердить владение, отправить `sitemap.xml`
-2. То же в [Yandex Webmaster](https://webmaster.yandex.ru/) (важно для рынка РУз)
-3. Добавить в [Yandex Business](https://yandex.uz/sprav/) — карточка организации
-4. Создать профиль в [Google Business Profile](https://business.google.com/) — особенно важно для тур-агентства
+1. Подключить почтовый сервис на `fenixtour.uz` (Google Workspace, Yandex 360 для бизнеса, или у вашего регистратора часто есть встроенная почта)
+2. Сказать мне «поменяй email на fenixtour» — заменю во всех 24 местах за один проход
+
+Если оставляете `info@agentaero.uz` — ничего делать не нужно, всё работает.
 
 ---
 
@@ -231,10 +234,14 @@ git push --force-with-lease          # ОСТОРОЖНО — переписыв
 | Параметр | Значение |
 |----------|----------|
 | Хостинг | GitHub Pages |
-| Live URL | https://keereell.github.io/mavrannahr-tour/ |
+| Текущий URL | https://keereell.github.io/mavrannahr-tour/ |
+| Финальный URL | https://fenixtour.uz/ (после настройки DNS — см. выше) |
 | Репозиторий | https://github.com/keereell/mavrannahr-tour |
 | Ветка деплоя | `main` |
 | Автодеплой | ✅ при каждом `git push` |
-| HTTPS | ✅ автоматический |
-| Custom domain | ⏳ ждёт подключения `agentaero.uz` |
+| HTTPS | ✅ автоматический (Let's Encrypt) |
+| SEO-код под домен | ✅ `https://fenixtour.uz/` везде в canonical / og:url / sitemap / Schema.org |
+| CNAME файл | ✅ создан, указывает на `fenixtour.uz` |
+| Custom domain в GitHub | ⏳ ждёт ваших действий: настроить DNS + активировать в Settings → Pages |
+| Email | `info@agentaero.uz` (если будете менять на `info@fenixtour.uz` — скажите) |
 | Стоимость | 0 USD/мес (GitHub Pages бесплатный для публичных репо) |

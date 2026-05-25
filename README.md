@@ -4,8 +4,9 @@
 
 - **Стек:** чистый HTML / CSS / JS, без сборки и фреймворков
 - **Языки:** UZ (по умолчанию) · RU · EN — авто-определение по `navigator.language`, выбор запоминается в `localStorage`
-- **Текущий деплой:** https://keereell.github.io/mavrannahr-tour/ (preview-домен на GitHub Pages)
-- **Будущий домен:** `agentaero.uz` (когда подключите — см. [DEPLOY.md](./DEPLOY.md))
+- **Хостинг:** GitHub Pages
+- **Live URL (preview):** https://keereell.github.io/mavrannahr-tour/
+- **Production URL:** https://fenixtour.uz/ — заработает после настройки DNS, см. [DEPLOY.md](./DEPLOY.md)
 
 ---
 
@@ -100,7 +101,7 @@ git push
 
 Через 30–60 секунд изменения на live-сайте.
 
-Когда выберете финальный домен (`agentaero.uz` или другой) — в DEPLOY.md есть раздел «Подключение своего домена» с чек-листом по обновлению SEO-ссылок.
+**Подключение `fenixtour.uz`** — все SEO-ссылки в коде уже указывают на финальный домен, файл `CNAME` создан. Осталось настроить DNS у регистратора и активировать домен в GitHub Settings. Пошагово — в [DEPLOY.md](./DEPLOY.md#-подключение-домена-fenixtouruz).
 
 ---
 
